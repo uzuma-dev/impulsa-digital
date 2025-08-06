@@ -19,15 +19,18 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-card">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <img 
-              src="/lovable-uploads/7974806e-6a99-4214-9382-9af56d629877.png" 
-              alt="Impulsa Logo" 
-              className="h-10 w-auto transform rotate-12"
+          {/* Logo + Texto */}
+          <div className="flex items-center space-x-4 justify-start">
+            <img
+              src="/lovable-uploads/cohete.png"
+              alt="Impulsa Logo"
+              className="h-12 w-auto"
             />
+            <div className="leading-tight px-2 bg-[#001236] rounded-md">
+              <h1 className="text-2xl font-bold text-white">IMPULSA</h1>
+              <p className="text-sm text-white tracking-wide">AGENCIA DE MARKETING</p>
+            </div>
           </div>
-
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-8">
             {menuItems.map((item) => (
@@ -80,7 +83,8 @@ const Navbar = () => {
           </div>
         )}
       </div>
-    </nav>
+    </nav >
+
   );
 };
 

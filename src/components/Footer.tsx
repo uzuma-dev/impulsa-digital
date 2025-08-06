@@ -41,34 +41,39 @@ const Footer = () => {
       {/* Main Footer */}
       <div className="py-16">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Company Info */}
             <div className="space-y-6">
-              <div className="flex items-center space-x-2">
-                <img 
-                  src="/lovable-uploads/7974806e-6a99-4214-9382-9af56d629877.png" 
-                  alt="Impulsa Logo" 
-                  className="h-8 w-auto transform rotate-12"
+              {/* Logo + Texto */}
+              <div className="flex items-center justify-start">
+                <img
+                  src="/lovable-uploads/cohete.png"
+                  alt="Impulsa Logo"
+                  className="h-12 w-auto"
                 />
+                <div className="leading-tight px-2 bg-[#001236] rounded-md">
+                  <h1 className="text-2xl font-bold text-white">IMPULSA</h1>
+                  <p className="text-sm text-white tracking-wide">AGENCIA DE MARKETING</p>
+                </div>
               </div>
-              
+
               <p className="text-white/70 leading-relaxed">
-                Transformamos tu presencia digital con estrategias innovadoras y resultados medibles. 
+                Transformamos tu presencia digital con estrategias innovadoras y resultados medibles.
                 Tu éxito es nuestro objetivo.
               </p>
 
               <div className="space-y-3">
                 <div className="flex items-center gap-3 text-white/70">
                   <Mail className="w-5 h-5 text-primary" />
-                  <span>contacto@impulsa.com</span>
+                  <span><a href="mailto:contactoImpulsaSAS@gmail.com">contactoImpulsaSAS@gmail.com</a></span>
                 </div>
                 <div className="flex items-center gap-3 text-white/70">
                   <Phone className="w-5 h-5 text-primary" />
-                  <span>+34 123 456 789</span>
+                  <span>+57 314 581 4663 (Whatsapp)</span>
                 </div>
                 <div className="flex items-center gap-3 text-white/70">
                   <MapPin className="w-5 h-5 text-primary" />
-                  <span>Madrid, España</span>
+                  <span>Manizales, Colombia</span>
                 </div>
               </div>
             </div>
@@ -79,8 +84,8 @@ const Footer = () => {
               <ul className="space-y-3">
                 {services.map((service) => (
                   <li key={service}>
-                    <a 
-                      href="#" 
+                    <a
+                      href="#"
                       className="text-white/70 hover:text-primary transition-colors duration-300 block"
                     >
                       {service}
@@ -96,8 +101,8 @@ const Footer = () => {
               <ul className="space-y-3">
                 {quickLinks.map((link) => (
                   <li key={link}>
-                    <a 
-                      href="#" 
+                    <a
+                      href="#"
                       className="text-white/70 hover:text-primary transition-colors duration-300 block"
                     >
                       {link}
@@ -105,42 +110,6 @@ const Footer = () => {
                   </li>
                 ))}
               </ul>
-            </div>
-
-            {/* Newsletter */}
-            <div>
-              <h3 className="text-lg font-semibold mb-6">Newsletter</h3>
-              <p className="text-white/70 mb-4">
-                Recibe las últimas tendencias y tips de marketing digital.
-              </p>
-              
-              <div className="space-y-3">
-                <div className="flex flex-col sm:flex-row gap-2">
-                  <input 
-                    type="email" 
-                    placeholder="Tu email"
-                    className="flex-1 px-4 py-2 bg-white/10 border border-white/20 rounded-md text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
-                  <Button variant="default" size="sm" className="shrink-0">
-                    Suscribirse
-                  </Button>
-                </div>
-                
-                <div className="flex gap-4 pt-4">
-                  <Button variant="ghost" size="icon" className="w-8 h-8 text-white/70 hover:text-primary">
-                    <Facebook className="w-4 h-4" />
-                  </Button>
-                  <Button variant="ghost" size="icon" className="w-8 h-8 text-white/70 hover:text-primary">
-                    <Twitter className="w-4 h-4" />
-                  </Button>
-                  <Button variant="ghost" size="icon" className="w-8 h-8 text-white/70 hover:text-primary">
-                    <Instagram className="w-4 h-4" />
-                  </Button>
-                  <Button variant="ghost" size="icon" className="w-8 h-8 text-white/70 hover:text-primary">
-                    <Linkedin className="w-4 h-4" />
-                  </Button>
-                </div>
-              </div>
             </div>
           </div>
         </div>

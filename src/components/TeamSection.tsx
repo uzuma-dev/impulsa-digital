@@ -9,10 +9,10 @@ import member4 from '@/assets/team-member-4.jpg';
 const TeamSection = () => {
   const teamMembers = [
     {
-      name: "Ana García",
-      role: "Directora de Marketing",
+      name: "Camilo Correa",
+      role: "Director de Marketing",
       image: member1,
-      description: "Especialista en estrategias digitales con 8+ años de experiencia",
+      description: "Especialista en estrategias digitales con 4+ años de experiencia",
       social: {
         linkedin: "#",
         email: "ana@impulsa.com",
@@ -20,7 +20,7 @@ const TeamSection = () => {
       }
     },
     {
-      name: "Carlos Rodríguez",
+      name: "Julian Flores",
       role: "Director Creativo",
       image: member2,
       description: "Diseñador y estratega creativo con visión innovadora",
@@ -42,10 +42,10 @@ const TeamSection = () => {
       }
     },
     {
-      name: "Diego Martín",
-      role: "Analista de Datos",
+      name: "Daniel Flores",
+      role: "Analista de Datos y Desarrollador",
       image: member4,
-      description: "Especialista en métricas y optimización de rendimiento",
+      description: "Especialista en métricas, optimización de rendimiento y desarrollo",
       social: {
         linkedin: "#",
         email: "diego@impulsa.com",
@@ -63,7 +63,7 @@ const TeamSection = () => {
             <div className="w-2 h-2 bg-secondary rounded-full"></div>
             <span className="text-secondary text-sm font-medium">Nuestro equipo</span>
           </div>
-          
+
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Conoce a los{' '}
             <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
@@ -71,9 +71,9 @@ const TeamSection = () => {
             </span>{' '}
             detrás de tu éxito
           </h2>
-          
+
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Un equipo apasionado de profesionales dedicados a transformar tu presencia digital 
+            Un equipo apasionado de profesionales dedicados a transformar tu presencia digital
             y acelerar el crecimiento de tu negocio.
           </p>
         </div>
@@ -81,7 +81,7 @@ const TeamSection = () => {
         {/* Team Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {teamMembers.map((member, index) => (
-            <Card 
+            <Card
               key={member.name}
               className="border-0 shadow-card hover:shadow-hover transition-all duration-500 transform hover:-translate-y-4 group bg-card/80 backdrop-blur-sm overflow-hidden animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
@@ -89,15 +89,15 @@ const TeamSection = () => {
               <CardContent className="p-0">
                 {/* Image */}
                 <div className="relative overflow-hidden">
-                  <img 
-                    src={member.image} 
+                  <img
+                    src={member.image}
                     alt={`${member.name} - ${member.role}`}
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  
+
                   {/* Gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  
+
                   {/* Social links - appear on hover */}
                   <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0">
                     <Button size="icon" variant="ghost" className="w-8 h-8 bg-white/90 hover:bg-white text-primary">
