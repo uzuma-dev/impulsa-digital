@@ -15,23 +15,23 @@
     --popover: 0 0% 100%;
     --popover-foreground: 215 28% 17%;
 
-    /* Primary - Innovation Blue */
-    --primary: 217 91% 60%;
+    /* Primary - Deep Blue (from logo #021335) */
+    --primary: 215 89% 11%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 217 91% 70%;
-    --primary-dark: 217 91% 50%;
+    --primary-light: 215 89% 21%;
+    --primary-dark: 215 89% 6%;
 
-    /* Secondary - Tech Purple */
-    --secondary: 262 83% 58%;
+    /* Secondary - Lighter Blue variation */
+    --secondary: 215 75% 35%;
     --secondary-foreground: 0 0% 100%;
-    --secondary-light: 262 83% 68%;
-    --secondary-dark: 262 83% 48%;
+    --secondary-light: 215 75% 45%;
+    --secondary-dark: 215 75% 25%;
 
-    /* Accent - Trust Green */
-    --accent: 142 69% 58%;
+    /* Accent - Complementary Blue */
+    --accent: 195 85% 45%;
     --accent-foreground: 0 0% 100%;
-    --accent-light: 142 69% 68%;
-    --accent-dark: 142 69% 48%;
+    --accent-light: 195 85% 55%;
+    --accent-dark: 195 85% 35%;
 
     /* Neutral tones */
     --muted: 210 40% 96%;
@@ -87,20 +87,20 @@
     --popover: 215 28% 15%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 217 91% 60%;
+    --primary: 215 89% 11%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 217 91% 70%;
-    --primary-dark: 217 91% 50%;
+    --primary-light: 215 89% 21%;
+    --primary-dark: 215 89% 6%;
 
-    --secondary: 262 83% 58%;
+    --secondary: 215 75% 35%;
     --secondary-foreground: 0 0% 100%;
-    --secondary-light: 262 83% 68%;
-    --secondary-dark: 262 83% 48%;
+    --secondary-light: 215 75% 45%;
+    --secondary-dark: 215 75% 25%;
 
-    --accent: 142 69% 58%;
+    --accent: 195 85% 45%;
     --accent-foreground: 0 0% 100%;
-    --accent-light: 142 69% 68%;
-    --accent-dark: 142 69% 48%;
+    --accent-light: 195 85% 55%;
+    --accent-dark: 195 85% 35%;
 
     --muted: 215 28% 20%;
     --muted-foreground: 215 20% 65%;
