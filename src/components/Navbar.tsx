@@ -24,7 +24,7 @@ const Navbar = () => {
             <img 
               src="/lovable-uploads/7974806e-6a99-4214-9382-9af56d629877.png" 
               alt="Impulsa Logo" 
-              className="h-10 w-auto transform rotate-45"
+              className="h-10 w-auto transform rotate-12"
             />
           </div>
 
