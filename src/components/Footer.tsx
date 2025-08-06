@@ -114,13 +114,13 @@ const Footer = () => {
               </p>
               
               <div className="space-y-3">
-                <div className="flex gap-2">
+                <div className="flex flex-col sm:flex-row gap-2">
                   <input 
                     type="email" 
                     placeholder="Tu email"
                     className="flex-1 px-4 py-2 bg-white/10 border border-white/20 rounded-md text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-primary"
                   />
-                  <Button variant="default" size="sm">
+                  <Button variant="default" size="sm" className="shrink-0">
                     Suscribirse
                   </Button>
                 </div>
