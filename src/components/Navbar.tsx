@@ -21,12 +21,11 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-primary rounded-md flex items-center justify-center">
-              <span className="text-white font-bold text-lg">I</span>
-            </div>
-            <span className="text-xl font-bold text-foreground">
-              Impulsa
-            </span>
+            <img 
+              src="/lovable-uploads/7974806e-6a99-4214-9382-9af56d629877.png" 
+              alt="Impulsa Logo" 
+              className="h-10 w-auto"
+            />
           </div>
 
           {/* Desktop Menu */}

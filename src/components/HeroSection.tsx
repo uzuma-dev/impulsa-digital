@@ -4,7 +4,7 @@ import heroImage from '@/assets/hero-marketing.jpg';
 
 const HeroSection = () => {
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Background with gradient overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -54,16 +54,16 @@ const HeroSection = () => {
             <Button 
               variant="hero" 
               size="lg" 
-              className="bg-white text-primary hover:bg-white/90 hover:text-primary-dark shadow-hover group"
+              className="group"
             >
               Contáctanos
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             
             <Button 
-              variant="outline" 
+              variant="secondary" 
               size="lg" 
-              className="border-white/30 text-white hover:bg-white/10 backdrop-blur-md group"
+              className="group"
             >
               <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
               Ver nuestro trabajo
