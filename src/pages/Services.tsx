@@ -80,6 +80,13 @@ const Services = () => {
     }
   };
 
+  const openWhatsApp = () => {
+    const message = encodeURIComponent('Hola quiero agendar una cita con ustedes');
+    const phoneNumber = '1234567890'; // Reemplaza con tu número de WhatsApp
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -98,7 +105,7 @@ const Services = () => {
               variant="secondary" 
               size="lg" 
               className="text-primary hover:text-primary"
-              onClick={scrollToContact}
+              onClick={openWhatsApp}
             >
               Solicitar Cotización
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -154,7 +161,7 @@ const Services = () => {
                     <Button 
                       variant="outline" 
                       className="w-full group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300"
-                      onClick={scrollToContact}
+                      onClick={openWhatsApp}
                     >
                       Más Información
                     </Button>
@@ -181,7 +188,7 @@ const Services = () => {
               <Button 
                 variant="default" 
                 size="lg"
-                onClick={scrollToContact}
+                onClick={openWhatsApp}
               >
                 Solicitar Consulta Gratuita
               </Button>

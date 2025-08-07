@@ -7,31 +7,36 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
-    { name: 'Inicio', href: '/', isRoute: true },
     { name: 'Servicios', href: '/servicios', isRoute: true },
     { name: 'Sobre nosotros', href: '#sobre', isRoute: false },
     { name: 'Nuestro equipo', href: '#equipo', isRoute: false },
     { name: 'Clientes', href: '#clientes', isRoute: false },
-    { name: 'Blog', href: '#blog', isRoute: false },
     { name: 'Contacto', href: '#contacto', isRoute: false },
   ];
+
+  const scrollToContact = () => {
+    const contactElement = document.getElementById('contacto');
+    if (contactElement) {
+      contactElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-card">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo + Texto */}
-          <div className="flex items-center space-x-4 justify-start">
+          <Link to="/" className="flex items-center space-x-4 justify-start group">
             <img
               src="/lovable-uploads/cohete.png"
               alt="Impulsa Logo"
-              className="h-12 w-auto"
+              className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
             />
-            <div className="leading-tight px-2 bg-[#001236] rounded-md">
+            <div className="leading-tight px-2 bg-[#001236] rounded-md transition-all duration-300 group-hover:bg-primary">
               <h1 className="text-2xl font-bold text-white">IMPULSA</h1>
               <p className="text-sm text-white tracking-wide">AGENCIA DE MARKETING</p>
             </div>
-          </div>
+          </Link>
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-8">
             {menuItems.map((item) => (
@@ -55,7 +60,11 @@ const Navbar = () => {
                 </a>
               )
             ))}
-            <Button variant="hero" size="sm">
+            <Button 
+              variant="hero" 
+              size="sm"
+              onClick={scrollToContact}
+            >
               Contáctanos
             </Button>
           </div>
@@ -98,7 +107,12 @@ const Navbar = () => {
                 )
               ))}
               <div className="px-3 py-2">
-                <Button variant="hero" size="sm" className="w-full">
+                <Button 
+                  variant="hero" 
+                  size="sm" 
+                  className="w-full"
+                  onClick={scrollToContact}
+                >
                   Contáctanos
                 </Button>
               </div>
