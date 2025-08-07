@@ -124,19 +124,6 @@ const TeamSection = () => {
             </Card>
           ))}
         </div>
-
-        {/* CTA Section */}
-        <div className="text-center mt-16">
-          <Card className="border-0 shadow-elegant bg-gradient-primary text-white p-8 inline-block">
-            <CardContent className="p-0">
-              <h3 className="text-2xl font-bold mb-4">¿Quieres formar parte del equipo?</h3>
-              <p className="mb-6 opacity-90">Siempre estamos buscando talento excepcional para unirse a nuestra familia.</p>
-              <Button variant="secondary" size="lg" className="bg-white text-primary hover:bg-white/90">
-                Ver oportunidades
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
       </div>
     </section>
   );

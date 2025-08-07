@@ -83,7 +83,7 @@ const Services = () => {
   const openWhatsApp = (customMessage?: string) => {
     const defaultMessage = 'Hola quiero agendar una cita con ustedes';
     const message = encodeURIComponent(customMessage || defaultMessage);
-    const phoneNumber = '1234567890'; // Reemplaza con tu número de WhatsApp
+    const phoneNumber = '+573127142928'; // Reemplaza con tu número de WhatsApp
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -173,38 +173,6 @@ const Services = () => {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-subtle">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto">
-            <Users className="h-16 w-16 text-primary mx-auto mb-6" />
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              ¿Listo para impulsar tu negocio?
-            </h2>
-            <p className="text-xl text-muted-foreground mb-8">
-              Nuestro equipo de expertos está preparado para crear una estrategia personalizada que se adapte a tus objetivos y presupuesto.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                variant="default" 
-                size="lg"
-                onClick={() => openWhatsApp('Hola, necesito solicitar una consulta gratuita para evaluar mi estrategia de marketing')}
-              >
-                Solicitar Consulta Gratuita
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                onClick={scrollToContact}
-              >
-                Ver Portafolio
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <Footer />
     </div>
   );
