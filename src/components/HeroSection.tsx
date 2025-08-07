@@ -3,6 +3,20 @@ import { ArrowRight, Play, Sparkles } from 'lucide-react';
 import heroImage from '@/assets/hero-marketing.jpg';
 
 const HeroSection = () => {
+  const openWhatsApp = (customMessage?: string) => {
+    const defaultMessage = 'Hola quiero agendar una cita con ustedes';
+    const message = encodeURIComponent(customMessage || defaultMessage);
+    const phoneNumber = '1234567890'; // Reemplaza con tu número de WhatsApp
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
+  const scrollToContact = () => {
+    const contactElement = document.getElementById('contacto');
+    if (contactElement) {
+      contactElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Background with gradient overlay */}
@@ -55,6 +69,7 @@ const HeroSection = () => {
               variant="hero" 
               size="lg" 
               className="group"
+              onClick={() => openWhatsApp('Hola, me interesa conocer más sobre sus servicios de marketing digital')}
             >
               Contáctanos
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -64,6 +79,7 @@ const HeroSection = () => {
               variant="secondary" 
               size="lg" 
               className="group"
+              onClick={scrollToContact}
             >
               <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
               Ver nuestro trabajo

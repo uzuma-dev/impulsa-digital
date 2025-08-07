@@ -80,8 +80,9 @@ const Services = () => {
     }
   };
 
-  const openWhatsApp = () => {
-    const message = encodeURIComponent('Hola quiero agendar una cita con ustedes');
+  const openWhatsApp = (customMessage?: string) => {
+    const defaultMessage = 'Hola quiero agendar una cita con ustedes';
+    const message = encodeURIComponent(customMessage || defaultMessage);
     const phoneNumber = '1234567890'; // Reemplaza con tu número de WhatsApp
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');
@@ -105,7 +106,7 @@ const Services = () => {
               variant="secondary" 
               size="lg" 
               className="text-primary hover:text-primary"
-              onClick={openWhatsApp}
+              onClick={() => openWhatsApp('Hola, necesito solicitar una cotización para mis servicios de marketing')}
             >
               Solicitar Cotización
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -161,7 +162,7 @@ const Services = () => {
                     <Button 
                       variant="outline" 
                       className="w-full group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300"
-                      onClick={openWhatsApp}
+                      onClick={() => openWhatsApp(`Hola, necesito más información sobre el servicio de ${service.title}`)}
                     >
                       Más Información
                     </Button>
@@ -188,7 +189,7 @@ const Services = () => {
               <Button 
                 variant="default" 
                 size="lg"
-                onClick={openWhatsApp}
+                onClick={() => openWhatsApp('Hola, necesito solicitar una consulta gratuita para evaluar mi estrategia de marketing')}
               >
                 Solicitar Consulta Gratuita
               </Button>

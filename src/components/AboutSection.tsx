@@ -1,9 +1,18 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Target, Users, Lightbulb, TrendingUp } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import aboutImage from '@/assets/about-team.jpg';
 
 const AboutSection = () => {
+  const openWhatsApp = (customMessage?: string) => {
+    const defaultMessage = 'Hola quiero agendar una cita con ustedes';
+    const message = encodeURIComponent(customMessage || defaultMessage);
+    const phoneNumber = '1234567890'; // Reemplaza con tu número de WhatsApp
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   const features = [
     {
       icon: Target,
@@ -60,10 +69,16 @@ const AboutSection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="default" size="lg">
-                Conoce nuestros servicios
-              </Button>
-              <Button variant="outline" size="lg">
+              <Link to="/servicios">
+                <Button variant="default" size="lg">
+                  Conoce nuestros servicios
+                </Button>
+              </Link>
+              <Button 
+                variant="outline" 
+                size="lg"
+                onClick={() => openWhatsApp('Hola, me gustaría ver algunos casos de éxito de sus proyectos anteriores')}
+              >
                 Ver casos de éxito
               </Button>
             </div>
