@@ -1,23 +1,49 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const menuItems = [
     { name: 'Servicios', href: '/servicios', isRoute: true },
     { name: 'Clientes', href: '/clientes', isRoute: true },
     { name: 'Sobre nosotros', href: '#sobre', isRoute: false },
     { name: 'Nuestro equipo', href: '#equipo', isRoute: false },
-    { name: 'Contacto', href: '#contacto', isRoute: false },
   ];
 
+  const scrollToSection = (sectionId: string) => {
+    if (location.pathname !== '/') {
+      // Si no estamos en la página principal, navegar primero
+      navigate('/', { replace: true });
+      // Usar setTimeout para esperar a que la página se cargue
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // Si estamos en la página principal, hacer scroll directamente
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   const scrollToContact = () => {
-    const contactElement = document.getElementById('contacto');
-    if (contactElement) {
-      contactElement.scrollIntoView({ behavior: 'smooth' });
+    scrollToSection('contacto');
+  };
+
+  const handleMenuItemClick = (item: any) => {
+    setIsMenuOpen(false);
+    if (!item.isRoute) {
+      const sectionId = item.href.replace('#', '');
+      scrollToSection(sectionId);
     }
   };
 
@@ -50,14 +76,14 @@ const Navbar = () => {
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
                 </Link>
               ) : (
-                <a
+                <button
                   key={item.name}
-                  href={item.href}
+                  onClick={() => scrollToSection(item.href.replace('#', ''))}
                   className="text-muted-foreground hover:text-primary transition-colors duration-300 relative group"
                 >
                   {item.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-                </a>
+                </button>
               )
             ))}
             <Button 
@@ -96,14 +122,13 @@ const Navbar = () => {
                     {item.name}
                   </Link>
                 ) : (
-                  <a
+                  <button
                     key={item.name}
-                    href={item.href}
-                    className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors duration-300"
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={() => handleMenuItemClick(item)}
+                    className="block w-full text-left px-3 py-2 text-muted-foreground hover:text-primary transition-colors duration-300"
                   >
                     {item.name}
-                  </a>
+                  </button>
                 )
               ))}
               <div className="px-3 py-2">
