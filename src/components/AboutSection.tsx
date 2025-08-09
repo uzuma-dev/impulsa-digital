@@ -98,8 +98,8 @@ const AboutSection = () => {
             {/* Floating card */}
             <Card className="absolute -bottom-6 -left-6 bg-card/95 backdrop-blur-md shadow-hover border-0">
               <CardContent className="p-6">
-                <div className="text-2xl font-bold text-primary mb-1">98%</div>
-                <div className="text-sm text-muted-foreground">Satisfacción del cliente</div>
+                <div className="text-2xl font-bold text-primary mb-1">Solo</div>
+                <div className="text-sm text-muted-foreground">Cobramos por resultados</div>
               </CardContent>
             </Card>
           </div>

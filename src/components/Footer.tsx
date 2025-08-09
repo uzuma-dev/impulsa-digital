@@ -48,7 +48,7 @@ const Footer = () => {
                 <img
                   src="/lovable-uploads/cohete.png"
                   alt="Impulsa Logo"
-                  className="h-12 w-auto"
+                  className="h-12 w-auto bg-white rounded-md"
                 />
                 <div className="leading-tight px-2 bg-[#001236] rounded-md">
                   <h1 className="text-2xl font-bold text-white">IMPULSA</h1>

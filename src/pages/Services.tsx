@@ -23,16 +23,16 @@ const Services = () => {
       description: "Estrategias integrales de marketing digital para hacer crecer tu negocio en línea",
       icon: <TrendingUp className="h-8 w-8" />,
       features: ["SEO/SEM", "Email Marketing", "Marketing de Contenidos", "Analytics"],
-      price: "Desde $450.000/mes",
+      price: "",
       category: "Digital"
     },
     {
       id: 2,
       title: "Publicidad Online",
-      description: "Campañas publicitarias efectivas en Google Ads, Facebook e Instagram",
+      description: "Campañas publicitarias efectivas en Google Ads, TikTok, Facebook e Instagram",
       icon: <Megaphone className="h-8 w-8" />,
-      features: ["Google Ads", "Facebook Ads", "Instagram Ads", "Remarketing"],
-      price: "Desde $600.000/mes",
+      features: ["Google Ads", "Facebook Ads", "Instagram Ads", "TikTok Ads", "Network Ads", "Remarketing"],
+      price: "",
       category: "Publicidad"
     },
     {
@@ -40,8 +40,8 @@ const Services = () => {
       title: "Gestión de Redes Sociales",
       description: "Creación y gestión de contenido para todas tus redes sociales",
       icon: <Heart className="h-8 w-8" />,
-      features: ["Creación de Contenido", "Community Management", "Stories", "Reels"],
-      price: "Desde $400.000/mes",
+      features: ["Creación de Contenido", "Community Management", "Flayers", "Stories", "Reels"],
+      price: "",
       category: "Social Media"
     },
     {
@@ -49,8 +49,8 @@ const Services = () => {
       title: "Diseño Gráfico",
       description: "Diseño de identidad visual y materiales gráficos para tu marca",
       icon: <Palette className="h-8 w-8" />,
-      features: ["Logo Design", "Branding", "Material Impreso", "Web Design"],
-      price: "Desde $500.000/proyecto",
+      features: ["Logo Design", "Branding", "Material Impreso", "Fotografía", "Web Design"],
+      price: "",
       category: "Diseño"
     },
     {
@@ -59,16 +59,16 @@ const Services = () => {
       description: "Optimización para motores de búsqueda y mejora del ranking web",
       icon: <Search className="h-8 w-8" />,
       features: ["Auditoría SEO", "Optimización On-Page", "Link Building", "SEO Local"],
-      price: "Desde $1.000.000/mes",
+      price: "",
       category: "SEO"
     },
     {
       id: 6,
-      title: "Análisis y Reporting",
-      description: "Monitoreo y análisis detallado del rendimiento de tus campañas",
+      title: "Análisis y Reportes",
+      description: "Monitoreo y análisis detallado del rendimiento de tus campañas y estrategias",
       icon: <BarChart3 className="h-8 w-8" />,
-      features: ["Google Analytics", "Reportes Personalizados", "KPIs", "ROI Tracking"],
-      price: "Desde $300.000/mes",
+      features: ["Google Analytics", "Meta Ads"],
+      price: "",
       category: "Analytics"
     }
   ];

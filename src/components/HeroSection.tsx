@@ -43,7 +43,7 @@ const HeroSection = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-4 py-2 mb-6 animate-fade-in">
             <Sparkles className="w-4 h-4 text-accent" />
-            <span className="text-white text-sm font-medium">Agencia líder en marketing digital</span>
+            <span className="text-white text-sm font-medium">Agencia líder en marketing digital y automatizaciones con IA</span>
           </div>
 
           {/* Main heading */}
@@ -76,7 +76,7 @@ const HeroSection = () => {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             
-            <Link to="/lientes">
+            <Link to="/clientes">
               <Button 
                 variant="secondary" 
                 size="lg" 
@@ -90,18 +90,6 @@ const HeroSection = () => {
 
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 animate-fade-in" style={{ animationDelay: '1s' }}>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">2+</div>
-              <div className="text-white/70 text-sm">Clientes felices</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">150%</div>
-              <div className="text-white/70 text-sm">ROI promedio</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">1+</div>
-              <div className="text-white/70 text-sm">Años experiencia</div>
-            </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-white mb-2">24/7</div>
               <div className="text-white/70 text-sm">Soporte</div>
