@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import heroImage from '@/assets/hero-marketing.jpg';
 
 const HeroSection = () => {
@@ -75,15 +76,16 @@ const HeroSection = () => {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             
-            <Button 
-              variant="secondary" 
-              size="lg" 
-              className="group"
-              onClick={scrollToContact}
-            >
-              <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
-              Ver nuestro trabajo
-            </Button>
+            <Link to="/clientes">
+              <Button 
+                variant="secondary" 
+                size="lg" 
+                className="group"
+              >
+                <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                Ver nuestro trabajo
+              </Button>
+            </Link>
           </div>
 
           {/* Stats */}

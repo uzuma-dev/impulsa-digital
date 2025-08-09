@@ -74,13 +74,14 @@ const AboutSection = () => {
                   Conoce nuestros servicios
                 </Button>
               </Link>
-              <Button 
-                variant="outline" 
-                size="lg"
-                onClick={() => openWhatsApp('Hola, me gustaría ver algunos casos de éxito de sus proyectos anteriores')}
-              >
-                Ver casos de éxito
-              </Button>
+              <Link to="/clientes">
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                >
+                  Ver casos de éxito
+                </Button>
+              </Link>
             </div>
           </div>
 
