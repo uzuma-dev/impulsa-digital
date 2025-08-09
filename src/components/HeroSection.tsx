@@ -76,7 +76,7 @@ const HeroSection = () => {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             
-            <Link to="/clientes">
+            <Link to="/lientes">
               <Button 
                 variant="secondary" 
                 size="lg" 
