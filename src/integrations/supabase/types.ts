@@ -14,7 +14,57 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      clients: {
+        Row: {
+          client_logo_url: string | null
+          company_name: string
+          created_at: string
+          featured: boolean | null
+          final_metrics: Json | null
+          id: string
+          improvement_percentage: number | null
+          industry: string
+          initial_metrics: Json | null
+          project_description: string
+          project_duration_months: number | null
+          service_type: string
+          testimonial: string | null
+          updated_at: string
+        }
+        Insert: {
+          client_logo_url?: string | null
+          company_name: string
+          created_at?: string
+          featured?: boolean | null
+          final_metrics?: Json | null
+          id?: string
+          improvement_percentage?: number | null
+          industry: string
+          initial_metrics?: Json | null
+          project_description: string
+          project_duration_months?: number | null
+          service_type: string
+          testimonial?: string | null
+          updated_at?: string
+        }
+        Update: {
+          client_logo_url?: string | null
+          company_name?: string
+          created_at?: string
+          featured?: boolean | null
+          final_metrics?: Json | null
+          id?: string
+          improvement_percentage?: number | null
+          industry?: string
+          initial_metrics?: Json | null
+          project_description?: string
+          project_duration_months?: number | null
+          service_type?: string
+          testimonial?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
