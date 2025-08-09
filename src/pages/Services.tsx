@@ -23,7 +23,7 @@ const Services = () => {
       description: "Estrategias integrales de marketing digital para hacer crecer tu negocio en línea",
       icon: <TrendingUp className="h-8 w-8" />,
       features: ["SEO/SEM", "Email Marketing", "Marketing de Contenidos", "Analytics"],
-      price: "Desde $1,500/mes",
+      price: "Desde $450.000/mes",
       category: "Digital"
     },
     {
@@ -32,7 +32,7 @@ const Services = () => {
       description: "Campañas publicitarias efectivas en Google Ads, Facebook e Instagram",
       icon: <Megaphone className="h-8 w-8" />,
       features: ["Google Ads", "Facebook Ads", "Instagram Ads", "Remarketing"],
-      price: "Desde $2,000/mes",
+      price: "Desde $600.000/mes",
       category: "Publicidad"
     },
     {
@@ -41,7 +41,7 @@ const Services = () => {
       description: "Creación y gestión de contenido para todas tus redes sociales",
       icon: <Heart className="h-8 w-8" />,
       features: ["Creación de Contenido", "Community Management", "Stories", "Reels"],
-      price: "Desde $800/mes",
+      price: "Desde $400.000/mes",
       category: "Social Media"
     },
     {
@@ -50,7 +50,7 @@ const Services = () => {
       description: "Diseño de identidad visual y materiales gráficos para tu marca",
       icon: <Palette className="h-8 w-8" />,
       features: ["Logo Design", "Branding", "Material Impreso", "Web Design"],
-      price: "Desde $500/proyecto",
+      price: "Desde $500.000/proyecto",
       category: "Diseño"
     },
     {
@@ -59,7 +59,7 @@ const Services = () => {
       description: "Optimización para motores de búsqueda y mejora del ranking web",
       icon: <Search className="h-8 w-8" />,
       features: ["Auditoría SEO", "Optimización On-Page", "Link Building", "SEO Local"],
-      price: "Desde $1,200/mes",
+      price: "Desde $1.000.000/mes",
       category: "SEO"
     },
     {
@@ -68,7 +68,7 @@ const Services = () => {
       description: "Monitoreo y análisis detallado del rendimiento de tus campañas",
       icon: <BarChart3 className="h-8 w-8" />,
       features: ["Google Analytics", "Reportes Personalizados", "KPIs", "ROI Tracking"],
-      price: "Desde $400/mes",
+      price: "Desde $300.000/mes",
       category: "Analytics"
     }
   ];
