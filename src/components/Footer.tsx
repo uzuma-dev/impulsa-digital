@@ -17,8 +17,7 @@ const Footer = () => {
     "Servicios",
     "Nuestro equipo",
     "Blog",
-    "Casos de éxito",
-    "Contacto"
+    "Casos de éxito"
   ];
 
   return (
@@ -69,7 +68,7 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center gap-3 text-white/70">
                   <Phone className="w-5 h-5 text-primary" />
-                  <span>+57 314 581 4663 (Whatsapp)</span>
+                  <span>+57 314 581 4663</span>
                 </div>
                 <div className="flex items-center gap-3 text-white/70">
                   <MapPin className="w-5 h-5 text-primary" />

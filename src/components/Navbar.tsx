@@ -10,7 +10,7 @@ const Navbar = () => {
 
   const menuItems = [
     { name: 'Servicios', href: '/servicios', isRoute: true },
-    { name: 'Clientes', href: '/clientes', isRoute: true },
+    { name: 'Clientes', href: '/lientes', isRoute: true },
     { name: 'Sobre nosotros', href: '#sobre', isRoute: false },
     { name: 'Nuestro equipo', href: '#equipo', isRoute: false },
   ];

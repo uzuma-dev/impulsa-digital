@@ -57,8 +57,7 @@ const AboutSection = () => {
               
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Somos una agencia de marketing digital especializada en impulsar el crecimiento de empresas 
-                a través de estrategias innovadoras y resultados medibles. Con más de 5 años de experiencia, 
-                hemos ayudado a más de 200 empresas a alcanzar sus objetivos digitales.
+                a través de estrategias innovadoras y resultados medibles.
               </p>
               
               <p className="text-muted-foreground">
