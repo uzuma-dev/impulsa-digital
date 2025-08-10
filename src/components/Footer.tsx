@@ -43,16 +43,27 @@ const Footer = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Company Info */}
             <div className="space-y-6">
-              {/* Logo + Texto */}
+              {/* Galaxy Logo + Texto */}
               <div className="flex items-center justify-start">
-                <img
-                  src="/lovable-uploads/cohete.png"
-                  alt="Impulsa Logo"
-                  className="h-12 w-auto bg-white rounded-md"
-                />
-                <div className="leading-tight px-2 bg-[#001236] rounded-md">
-                  <h1 className="text-2xl font-bold text-white">IMPULSA</h1>
-                  <p className="text-sm text-white tracking-wide">AGENCIA DE MARKETING</p>
+                <div className="relative p-2 rounded-lg bg-gradient-galaxy">
+                  <img
+                    src="/lovable-uploads/cohete.png"
+                    alt="Impulsa Rocket"
+                    className="h-12 w-auto relative z-10 animate-float"
+                  />
+                  <div className="absolute inset-0 bg-gradient-nebula rounded-lg opacity-60"></div>
+                  <div className="absolute top-1 right-1 w-2 h-2 bg-galaxy-purple rounded-full animate-star-twinkle"></div>
+                  <div className="absolute bottom-1 left-1 w-1 h-1 bg-galaxy-blue rounded-full animate-star-twinkle" style={{animationDelay: '1s'}}></div>
+                  <div className="absolute top-1/2 left-1/2 w-1 h-1 bg-galaxy-pink rounded-full animate-star-twinkle" style={{animationDelay: '0.5s'}}></div>
+                </div>
+                <div className="relative ml-3 px-4 py-2 rounded-lg bg-gradient-primary overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-galaxy opacity-30"></div>
+                  <div className="relative z-10">
+                    <h1 className="text-2xl font-bold text-white drop-shadow-lg">IMPULSA</h1>
+                    <p className="text-sm text-galaxy-blue tracking-wide font-medium">AGENCIA DE MARKETING</p>
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-4 h-4 bg-galaxy-purple rounded-full opacity-40 animate-galaxy-pulse"></div>
+                  <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-galaxy-cyan rounded-full opacity-30 animate-galaxy-pulse" style={{animationDelay: '2s'}}></div>
                 </div>
               </div>
 
