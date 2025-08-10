@@ -9,10 +9,10 @@ import member4 from '@/assets/team-member-4.jpg';
 const TeamSection = () => {
   const teamMembers = [
     {
-      name: "Camilo Correa",
+      name: "Camilo Muñoz",
       role: "Director de Marketing",
       image: member1,
-      description: "Especialista en estrategias digitales con 4+ años de experiencia",
+      description: "Especialista en estrategias digitales con 2+ años de experiencia",
       social: {
         linkedin: "#",
         email: "ana@impulsa.com",
@@ -31,7 +31,7 @@ const TeamSection = () => {
       }
     },
     {
-      name: "María López",
+      name: "Valentina Galvis",
       role: "Estratega Digital",
       image: member3,
       description: "Experta en campañas digitales y análisis de datos",

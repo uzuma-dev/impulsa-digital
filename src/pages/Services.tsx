@@ -105,7 +105,7 @@ const Services = () => {
             <Button 
               variant="secondary" 
               size="lg" 
-              className="text-primary hover:text-primary"
+              className="text-primary hover:text-primary text-white"
               onClick={() => openWhatsApp('Hola, necesito solicitar una cotización para mis servicios de marketing')}
             >
               Solicitar Cotización
