@@ -35,8 +35,11 @@ const Navbar = () => {
     }
   };
 
-  const scrollToContact = () => {
-    scrollToSection('contacto');
+  const openWhatsApp = () => {
+    const message = encodeURIComponent('Hola, me interesa conocer más sobre sus servicios de marketing digital');
+    const phoneNumber = '+573127142928';
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappUrl, '_blank');
   };
 
   const handleMenuItemClick = (item: any) => {
@@ -89,7 +92,7 @@ const Navbar = () => {
             <Button 
               variant="hero" 
               size="sm"
-              onClick={scrollToContact}
+              onClick={openWhatsApp}
             >
               Contáctanos
             </Button>
@@ -136,7 +139,7 @@ const Navbar = () => {
                   variant="hero" 
                   size="sm" 
                   className="w-full"
-                  onClick={scrollToContact}
+                  onClick={openWhatsApp}
                 >
                   Contáctanos
                 </Button>

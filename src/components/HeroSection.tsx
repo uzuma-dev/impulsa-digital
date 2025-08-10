@@ -20,36 +20,40 @@ const HeroSection = () => {
   };
   return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Background with gradient overlay */}
+      {/* Galaxy Background */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="Marketing digital innovador" 
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-hero opacity-90"></div>
+        <div className="absolute inset-0 bg-gradient-hero"></div>
+        <div className="absolute inset-0 bg-gradient-galaxy opacity-80"></div>
       </div>
 
-      {/* Animated background elements */}
+      {/* Galaxy Stars and Cosmic Elements */}
       <div className="absolute inset-0 z-10">
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary/20 rounded-full blur-xl animate-float"></div>
-        <div className="absolute top-2/3 right-1/4 w-24 h-24 bg-secondary/20 rounded-full blur-lg animate-float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-1/4 left-1/3 w-20 h-20 bg-accent/20 rounded-full blur-lg animate-float" style={{ animationDelay: '2s' }}></div>
+        {/* Large galaxy elements */}
+        <div className="absolute top-1/4 left-1/4 w-40 h-40 bg-gradient-to-r from-purple-500/30 to-blue-500/30 rounded-full blur-2xl animate-galaxy-pulse"></div>
+        <div className="absolute top-2/3 right-1/4 w-32 h-32 bg-gradient-to-r from-blue-400/25 to-cyan-400/25 rounded-full blur-xl animate-cosmic-drift" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-1/4 left-1/3 w-24 h-24 bg-gradient-to-r from-pink-400/20 to-purple-400/20 rounded-full blur-lg animate-float" style={{ animationDelay: '2s' }}></div>
+        
+        {/* Stars */}
+        <div className="absolute top-20 left-1/3 w-2 h-2 bg-white rounded-full animate-star-twinkle"></div>
+        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-blue-300 rounded-full animate-star-twinkle" style={{ animationDelay: '0.5s' }}></div>
+        <div className="absolute bottom-1/3 left-1/5 w-1.5 h-1.5 bg-purple-300 rounded-full animate-star-twinkle" style={{ animationDelay: '1.5s' }}></div>
+        <div className="absolute top-1/2 left-3/4 w-1 h-1 bg-cyan-300 rounded-full animate-star-twinkle" style={{ animationDelay: '2.5s' }}></div>
+        <div className="absolute bottom-20 right-1/4 w-2 h-2 bg-pink-300 rounded-full animate-star-twinkle" style={{ animationDelay: '3s' }}></div>
       </div>
 
       {/* Content */}
       <div className="relative z-20 container mx-auto px-4 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-4 py-2 mb-6 animate-fade-in">
-            <Sparkles className="w-4 h-4 text-accent" />
+          {/* Galaxy Badge */}
+          <div className="inline-flex items-center gap-2 bg-purple-500/20 backdrop-blur-md rounded-full px-6 py-3 mb-6 animate-fade-in border border-purple-400/30">
+            <Sparkles className="w-4 h-4 text-purple-300 animate-star-twinkle" />
             <span className="text-white text-sm font-medium">Agencia líder en marketing digital y automatizaciones con IA</span>
           </div>
 
-          {/* Main heading */}
+          {/* Galaxy Main heading */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
             Impulsa tu marca al{' '}
-            <span className="bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent animate-galaxy-pulse">
               siguiente nivel
             </span>
           </h1>
@@ -64,12 +68,12 @@ const HeroSection = () => {
             Transformamos tu visión en resultados reales. Estrategias innovadoras de marketing digital que impulsan el crecimiento de tu negocio.
           </p>
 
-          {/* CTA Buttons */}
+          {/* Galaxy CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in" style={{ animationDelay: '0.8s' }}>
             <Button 
               variant="hero" 
               size="lg" 
-              className="group"
+              className="group bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 border-0 shadow-lg shadow-purple-500/25"
               onClick={() => openWhatsApp('Hola, me interesa conocer más sobre sus servicios de marketing digital')}
             >
               Contáctanos
@@ -80,7 +84,7 @@ const HeroSection = () => {
               <Button 
                 variant="secondary" 
                 size="lg" 
-                className="group"
+                className="group bg-blue-500/20 hover:bg-blue-500/30 text-white border border-blue-400/50 backdrop-blur-md"
               >
                 <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 Ver nuestro trabajo

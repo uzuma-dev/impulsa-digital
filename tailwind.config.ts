@@ -98,6 +98,20 @@ export default {
 				'float': {
 					'0%, 100%': { transform: 'translateY(0px)' },
 					'50%': { transform: 'translateY(-10px)' }
+				},
+				'galaxy-pulse': {
+					'0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+					'50%': { opacity: '0.8', transform: 'scale(1.1)' }
+				},
+				'star-twinkle': {
+					'0%, 100%': { opacity: '0.3' },
+					'50%': { opacity: '1' }
+				},
+				'cosmic-drift': {
+					'0%': { transform: 'translateX(-10px) translateY(0px)' },
+					'33%': { transform: 'translateX(5px) translateY(-15px)' },
+					'66%': { transform: 'translateX(10px) translateY(5px)' },
+					'100%': { transform: 'translateX(-10px) translateY(0px)' }
 				}
 			},
 			animation: {
@@ -106,12 +120,17 @@ export default {
 				'fade-in': 'fade-in 0.6s ease-out',
 				'slide-in': 'slide-in 0.6s ease-out',
 				'scale-in': 'scale-in 0.4s ease-out',
-				'float': 'float 3s ease-in-out infinite'
+				'float': 'float 3s ease-in-out infinite',
+				'galaxy-pulse': 'galaxy-pulse 4s ease-in-out infinite',
+				'star-twinkle': 'star-twinkle 2s ease-in-out infinite',
+				'cosmic-drift': 'cosmic-drift 8s ease-in-out infinite'
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
 				'gradient-hero': 'var(--gradient-hero)',
-				'gradient-card': 'var(--gradient-card)'
+				'gradient-card': 'var(--gradient-card)',
+				'gradient-galaxy': 'var(--gradient-galaxy)',
+				'gradient-nebula': 'var(--gradient-nebula)'
 			},
 			boxShadow: {
 				'elegant': 'var(--shadow-elegant)',

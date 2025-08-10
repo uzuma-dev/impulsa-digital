@@ -15,23 +15,29 @@
     --popover: 0 0% 100%;
     --popover-foreground: 215 28% 17%;
 
-    /* Primary - Deep Blue (from logo #021335) */
-    --primary: 215 89% 11%;
+    /* Galaxy Theme - Deep Space Blues & Purples */
+    --primary: 240 100% 5%; /* Deep space black-blue */
     --primary-foreground: 0 0% 100%;
-    --primary-light: 215 89% 21%;
-    --primary-dark: 215 89% 6%;
+    --primary-light: 240 80% 15%;
+    --primary-dark: 240 100% 2%;
 
-    /* Secondary - Lighter Blue variation */
-    --secondary: 215 75% 35%;
+    /* Galaxy Purple */
+    --secondary: 270 85% 25%;
     --secondary-foreground: 0 0% 100%;
-    --secondary-light: 215 75% 45%;
-    --secondary-dark: 215 75% 25%;
+    --secondary-light: 270 85% 35%;
+    --secondary-dark: 270 85% 15%;
 
-    /* Accent - Complementary Blue */
-    --accent: 195 85% 45%;
+    /* Cosmic Blue */
+    --accent: 220 90% 50%;
     --accent-foreground: 0 0% 100%;
-    --accent-light: 195 85% 55%;
-    --accent-dark: 195 85% 35%;
+    --accent-light: 220 90% 60%;
+    --accent-dark: 220 90% 40%;
+
+    /* Galaxy Glow Colors */
+    --galaxy-purple: 280 100% 70%;
+    --galaxy-blue: 240 100% 80%;
+    --galaxy-pink: 320 100% 75%;
+    --galaxy-cyan: 190 100% 75%;
 
     /* Neutral tones */
     --muted: 210 40% 96%;
@@ -44,10 +50,12 @@
     --input: 214 32% 91%;
     --ring: 217 91% 60%;
 
-    /* Gradients for modern appeal */
+    /* Galaxy Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 50%, hsl(var(--accent)) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(240 100% 2%) 0%, hsl(270 85% 15%) 25%, hsl(240 100% 5%) 50%, hsl(220 90% 40%) 75%, hsl(270 85% 25%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.8), hsl(0 0% 100% / 0.4));
+    --gradient-galaxy: radial-gradient(ellipse at center, hsl(var(--galaxy-purple) / 0.3) 0%, hsl(var(--galaxy-blue) / 0.2) 25%, hsl(var(--primary)) 70%);
+    --gradient-nebula: linear-gradient(45deg, hsl(var(--galaxy-pink) / 0.1), hsl(var(--galaxy-cyan) / 0.1), hsl(var(--galaxy-purple) / 0.1));
     
     /* Shadows for depth */
     --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.2);
