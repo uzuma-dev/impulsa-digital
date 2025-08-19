@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { toast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { User, Session } from '@supabase/supabase-js';
-import { Rocket, Star, BookOpen, Clock, CheckCircle, ExternalLink, LogOut } from 'lucide-react';
+import { Rocket, Star, BookOpen, Clock, CheckCircle, ExternalLink, LogOut, Calendar, User as UserIcon, ArrowLeft, Table } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
@@ -46,8 +46,11 @@ const Courses = () => {
   const [session, setSession] = useState<Session | null>(null);
   const [plans, setPlans] = useState<Plan[]>([]);
   const [purchases, setPurchases] = useState<Purchase[]>([]);
+  const [classes, setClasses] = useState<Class[]>([]);
+  const [selectedPlan, setSelectedPlan] = useState<Plan | null>(null);
   const [loading, setLoading] = useState(true);
   const [purchaseLoading, setPurchaseLoading] = useState<string | null>(null);
+  const [showClasses, setShowClasses] = useState(false);
 
   useEffect(() => {
     // Set up auth state listener
@@ -100,6 +103,25 @@ const Courses = () => {
       });
     } finally {
       setLoading(false);
+    }
+  };
+
+  const loadClasses = async (planId: string) => {
+    try {
+      const { data, error } = await supabase
+        .from('classes')
+        .select('*')
+        .eq('plan_id', planId)
+        .order('class_date');
+
+      if (error) throw error;
+      setClasses(data || []);
+    } catch (error: any) {
+      toast({
+        title: "Error",
+        description: "No se pudieron cargar las clases",
+        variant: "destructive",
+      });
     }
   };
 
@@ -176,12 +198,31 @@ const Courses = () => {
     return purchases.some(p => p.plan_id === planId && p.status === 'completed');
   };
 
+  const handleSelectPlan = (plan: Plan) => {
+    if (isPlanPurchased(plan.id)) {
+      setSelectedPlan(plan);
+      setShowClasses(true);
+      loadClasses(plan.id);
+    }
+  };
+
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('es-CO', {
       style: 'currency',
       currency: 'COP',
       minimumFractionDigits: 0,
     }).format(price);
+  };
+
+  const formatDate = (dateString: string) => {
+    return new Date(dateString).toLocaleDateString('es-ES', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
   };
 
   if (loading) {
@@ -306,9 +347,10 @@ const Courses = () => {
                         <div className="space-y-3">
                           <Button
                             className="w-full bg-galaxy-accent hover:bg-galaxy-accent/80"
-                            disabled
+                            onClick={() => handleSelectPlan(plan)}
                           >
-                            ✓ Ya adquirido
+                            <Table className="w-4 h-4 mr-2" />
+                            Ver Clases del Curso
                           </Button>
                           {plan.meet_link && (
                             <Button
@@ -317,7 +359,7 @@ const Courses = () => {
                               onClick={() => window.open(plan.meet_link!, '_blank')}
                             >
                               <ExternalLink className="w-4 h-4 mr-2" />
-                              Acceder a la Clase
+                              Acceder a la Clase General
                             </Button>
                           )}
                         </div>
@@ -348,6 +390,146 @@ const Courses = () => {
           </div>
         </div>
       </section>
+
+      {/* Classes Section */}
+      {showClasses && selectedPlan && (
+        <section className="pb-20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              {/* Back button and course info */}
+              <div className="mb-8">
+                <Button
+                  variant="ghost"
+                  onClick={() => setShowClasses(false)}
+                  className="text-galaxy-accent hover:bg-galaxy-accent/10 mb-6"
+                >
+                  <ArrowLeft className="w-4 h-4 mr-2" />
+                  Volver a Cursos
+                </Button>
+
+                <Card className="bg-background/95 border-galaxy-accent/20">
+                  <CardHeader>
+                    <CardTitle className="text-3xl font-bold text-galaxy-star flex items-center">
+                      <BookOpen className="w-8 h-8 mr-3 text-galaxy-accent" />
+                      {selectedPlan.name}
+                    </CardTitle>
+                    <CardDescription className="text-galaxy-muted text-lg">
+                      {selectedPlan.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="grid md:grid-cols-2 gap-8">
+                    {/* Objectives */}
+                    {selectedPlan.objectives && (
+                      <div>
+                        <h3 className="text-xl font-semibold text-galaxy-star mb-4">Objetivos del Curso</h3>
+                        <ul className="space-y-2">
+                          {selectedPlan.objectives.map((objective, index) => (
+                            <li key={index} className="flex items-start text-galaxy-muted">
+                              <CheckCircle className="w-4 h-4 mr-2 mt-1 text-galaxy-accent flex-shrink-0" />
+                              {objective}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {/* Guidelines */}
+                    {selectedPlan.guidelines && (
+                      <div>
+                        <h3 className="text-xl font-semibold text-galaxy-star mb-4">Lineamientos</h3>
+                        <ul className="space-y-2">
+                          {selectedPlan.guidelines.map((guideline, index) => (
+                            <li key={index} className="flex items-start text-galaxy-muted">
+                              <Star className="w-4 h-4 mr-2 mt-1 text-galaxy-accent flex-shrink-0" />
+                              {guideline}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Classes Table */}
+              <Card className="bg-background/95 border-galaxy-accent/20">
+                <CardHeader>
+                  <CardTitle className="text-2xl font-bold text-galaxy-star">
+                    Cronograma de Clases
+                  </CardTitle>
+                  <CardDescription className="text-galaxy-muted">
+                    Clases programadas para tu curso
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  {classes.length > 0 ? (
+                    <div className="overflow-x-auto">
+                      <table className="w-full">
+                        <thead>
+                          <tr className="border-b border-galaxy-accent/20">
+                            <th className="text-left py-4 px-2 text-galaxy-star font-semibold">Nombre de la Clase</th>
+                            <th className="text-left py-4 px-2 text-galaxy-star font-semibold">Fecha y Hora</th>
+                            <th className="text-left py-4 px-2 text-galaxy-star font-semibold">Profesor</th>
+                            <th className="text-left py-4 px-2 text-galaxy-star font-semibold">Descripción</th>
+                            <th className="text-left py-4 px-2 text-galaxy-star font-semibold">Acceso</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {classes.map((classItem, index) => (
+                            <tr 
+                              key={classItem.id} 
+                              className={`border-b border-galaxy-accent/10 ${
+                                index % 2 === 0 ? 'bg-background/50' : 'bg-galaxy-accent/5'
+                              }`}
+                            >
+                              <td className="py-4 px-2">
+                                <div className="font-medium text-galaxy-star">{classItem.class_name}</div>
+                              </td>
+                              <td className="py-4 px-2">
+                                <div className="flex items-center text-galaxy-muted">
+                                  <Calendar className="w-4 h-4 mr-2 text-galaxy-accent" />
+                                  {formatDate(classItem.class_date)}
+                                </div>
+                              </td>
+                              <td className="py-4 px-2">
+                                <div className="flex items-center text-galaxy-muted">
+                                  <UserIcon className="w-4 h-4 mr-2 text-galaxy-accent" />
+                                  {classItem.teacher_name}
+                                </div>
+                              </td>
+                              <td className="py-4 px-2">
+                                <div className="text-galaxy-muted text-sm">
+                                  {classItem.class_description || 'Sin descripción'}
+                                </div>
+                              </td>
+                              <td className="py-4 px-2">
+                                <Button
+                                  size="sm"
+                                  variant="outline"
+                                  onClick={() => window.open(classItem.meet_link, '_blank')}
+                                  className="border-galaxy-accent text-galaxy-accent hover:bg-galaxy-accent/10"
+                                >
+                                  <ExternalLink className="w-4 h-4 mr-1" />
+                                  Unirse
+                                </Button>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  ) : (
+                    <div className="text-center py-8 text-galaxy-muted">
+                      <BookOpen className="w-12 h-12 mx-auto mb-4 text-galaxy-accent/50" />
+                      <p>No hay clases programadas para este curso.</p>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+      )}
 
       <Footer />
     </div>
