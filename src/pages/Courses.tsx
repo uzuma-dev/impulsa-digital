@@ -19,6 +19,18 @@ interface Plan {
   meet_link: string | null;
   duration_weeks: number;
   is_active: boolean;
+  objectives: string[] | null;
+  guidelines: string[] | null;
+}
+
+interface Class {
+  id: string;
+  plan_id: string;
+  class_name: string;
+  class_date: string;
+  teacher_name: string;
+  meet_link: string;
+  class_description: string | null;
 }
 
 interface Purchase {

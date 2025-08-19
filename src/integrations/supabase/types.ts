@@ -14,6 +14,50 @@ export type Database = {
   }
   public: {
     Tables: {
+      classes: {
+        Row: {
+          class_date: string
+          class_description: string | null
+          class_name: string
+          created_at: string
+          id: string
+          meet_link: string
+          plan_id: string
+          teacher_name: string
+          updated_at: string
+        }
+        Insert: {
+          class_date: string
+          class_description?: string | null
+          class_name: string
+          created_at?: string
+          id?: string
+          meet_link: string
+          plan_id: string
+          teacher_name: string
+          updated_at?: string
+        }
+        Update: {
+          class_date?: string
+          class_description?: string | null
+          class_name?: string
+          created_at?: string
+          id?: string
+          meet_link?: string
+          plan_id?: string
+          teacher_name?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "fk_classes_plan_id"
+            columns: ["plan_id"]
+            isOneToOne: false
+            referencedRelation: "plans"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       clients: {
         Row: {
           client_logo_url: string | null
@@ -71,10 +115,12 @@ export type Database = {
           description: string
           duration_weeks: number | null
           features: string[]
+          guidelines: string[] | null
           id: string
           is_active: boolean | null
           meet_link: string | null
           name: string
+          objectives: string[] | null
           price: number
           updated_at: string
         }
@@ -83,10 +129,12 @@ export type Database = {
           description: string
           duration_weeks?: number | null
           features?: string[]
+          guidelines?: string[] | null
           id?: string
           is_active?: boolean | null
           meet_link?: string | null
           name: string
+          objectives?: string[] | null
           price: number
           updated_at?: string
         }
@@ -95,10 +143,12 @@ export type Database = {
           description?: string
           duration_weeks?: number | null
           features?: string[]
+          guidelines?: string[] | null
           id?: string
           is_active?: boolean | null
           meet_link?: string | null
           name?: string
+          objectives?: string[] | null
           price?: number
           updated_at?: string
         }
